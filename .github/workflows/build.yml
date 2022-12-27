@@ -18,7 +18,7 @@ jobs:
 
       - name: Test
         env:
-          IBM_DB_HOME: `pwd`/clidriver
+          IBM_DB_HOME: /home/runner/work/clidriver
           CGO_CFLAGS: -I$IBM_DB_HOME/include
           CGO_LDFLAGS: -L$IBM_DB_HOME/lib
           DYLD_LIBRARY_PATH: $IBM_DB_HOME/lib:$DYLD_LIBRARY_PATH
