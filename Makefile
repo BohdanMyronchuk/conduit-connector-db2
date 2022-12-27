@@ -12,7 +12,7 @@ inst:
 setup:
 	go run ./test/setup.go
 
-test: setup
+test: inst setup
 	docker run -itd --name mydb2 --privileged=true -p 50000:50000 -e LICENSE=accept -e DB2INST1_PASSWORD=pwd -e DBNAME=testdb -v vol:/database ibmcom/db2
 	go test $(GOTEST_FLAGS) -race -gcflags=all=-d=checkptr=0 ./...
 

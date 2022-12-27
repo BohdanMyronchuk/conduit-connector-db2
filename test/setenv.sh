@@ -12,10 +12,8 @@ fi
 
 OS=`uname`
 
-echo $CGO_CFLAGS
 export CGO_CFLAGS=-I$IBM_DB_HOME/include
 export CGO_LDFLAGS=-L$IBM_DB_HOME/lib
-echo $CGO_CFLAGS
 
 if [ "$OS" = "Darwin" ]
 then
