@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 # Script file to set environment variables to use db2cli executable from
 # clidriver/bin folder
 # This script is only for non-Windows platform.
