@@ -17,10 +17,10 @@ jobs:
           go-version: 1.18
 
       - name: Test
-        run: make test
         env:
           IBM_DB_HOME: `pwd`/clidriver
           CGO_CFLAGS: -I$IBM_DB_HOME/include
           CGO_LDFLAGS: -L$IBM_DB_HOME/lib
           DYLD_LIBRARY_PATH: $IBM_DB_HOME/lib:$DYLD_LIBRARY_PATH
           PATH: $PATH:$IBM_DB_HOME/bin
+        run: make test
