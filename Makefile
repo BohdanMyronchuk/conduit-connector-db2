@@ -8,8 +8,9 @@ build: dep
 
 dep:
 	go install github.com/ibmdb/go_ibm_db/installer@v0.4.2
-	. $(GOPATH)/pkg/mod/github.com/ibmdb/go_ibm_db@v0.4.2/installer/setenv.sh
-	go run $(GOPATH)/pkg/mod/github.com/ibmdb/go_ibm_db@v0.4.2/installer/setup.go
+	ls /home/runner/work/
+	. /home/runner/work/pkg/mod/github.com/ibmdb/go_ibm_db@v0.4.2/installer/setenv.sh
+	go run /home/runner/work/pkg/mod/github.com/ibmdb/go_ibm_db@v0.4.2/installer/setup.go
 
 test: dep
 	docker run -itd --name mydb2 --privileged=true -p 50000:50000 -e LICENSE=accept -e DB2INST1_PASSWORD=pwd -e DBNAME=testdb -v vol:/database ibmcom/db2
