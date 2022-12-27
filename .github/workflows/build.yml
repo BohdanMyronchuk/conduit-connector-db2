@@ -17,6 +17,4 @@ jobs:
           go-version: 1.18
 
       - name: Test
-        env:
-          conn: ${{ secrets.DB2_CONNECTION }}
         run: make test
