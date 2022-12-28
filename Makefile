@@ -13,7 +13,7 @@ test:
 	ls /home/runner/go/pkg/mod/
 	ls /home/runner/go/pkg/mod/github.com/
 	ls /home/runner/go/pkg/mod/github.com/ibmdb/
-	go run /home/runner/go/pkg/mod/github.com/imbdb/go_ibm_db@v0.4.2/installer/setup.go
+	go run /home/runner/go/pkg/mod/github.com/ibmdb/go_ibm_db@v0.4.2/installer/setup.go
 	docker run -itd --name mydb2 --privileged=true -p 5000:50000 -e LICENSE=accept -e DB2INST1_PASSWORD=pwd -e DBNAME=testdb -v vol:/database ibmcom/db2
 	go test $(GOTEST_FLAGS) -race -gcflags=all=-d=checkptr=0 ./...
 
