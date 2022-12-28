@@ -15,8 +15,8 @@ jobs:
         uses: actions/setup-go@v3
         with:
           go-version: 1.18
-      - name: Additional env
-        run: export LD_LIBRARY_PATH=$IBM_DB_HOME/lib:$LD_LIBRARY_PATH
+      #- name: Additional env
+      #  run: export LD_LIBRARY_PATH=$IBM_DB_HOME/lib:$LD_LIBRARY_PATH
       - name: Test
         env:
           IBM_DB_HOME: /home/runner/go/clidriver
