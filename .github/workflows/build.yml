@@ -17,8 +17,8 @@ jobs:
           go-version: 1.18
       - name: Test
         env:
-          IBM_DB_HOME: /home/runner/go/clidriver/
-          CGO_CFLAGS: -I/home/runner/go/clidriver/include/
-          CGO_LDFLAGS: -L/home/runner/go/clidriver/lib/
-          DYLD_LIBRARY_PATH: /home/runner/go/clidriver/lib/
+          IBM_DB_HOME: /home/runner/go/clidriver
+          CGO_CFLAGS: -I/home/runner/go/clidriver/include
+          CGO_LDFLAGS: -L/home/runner/go/clidriver/lib
+          DYLD_LIBRARY_PATH: /home/runner/go/clidriver/lib
         run: make test
