@@ -8,12 +8,9 @@ build:
 
 test:
 	go install github.com/ibmdb/go_ibm_db/installer@v0.4.2
-	# go run ./test/setup.go
-	export
-	go env
-	#ls /home/runner/work/conduit-connector-db2/conduit-connector-db2/
-	#docker run -itd --name mydb2 --privileged=true -p 5000:50000 -e LICENSE=accept -e DB2INST1_PASSWORD=pwd -e DBNAME=testdb -v vol:/database ibmcom/db2
-	#go test $(GOTEST_FLAGS) -race -gcflags=all=-d=checkptr=0 ./...
+	go run /home/runner/go/pkg/mod/imbdb/go_ibm_db@v0.4.2/installer/setup.go
+	docker run -itd --name mydb2 --privileged=true -p 5000:50000 -e LICENSE=accept -e DB2INST1_PASSWORD=pwd -e DBNAME=testdb -v vol:/database ibmcom/db2
+	go test $(GOTEST_FLAGS) -race -gcflags=all=-d=checkptr=0 ./...
 
 lint:
 	$(GOLINT) run --timeout=5m -c .golangci.yml
