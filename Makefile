@@ -21,8 +21,8 @@ test:
 	ls /home/runner/go/pkg/mod/github.com/ibmdb/go_ibm_db@v0.4.2/
 	ls /home/runner/go/pkg/mod/github.com/ibmdb/go_ibm_db@v0.4.2/installer/
 
-	#docker run -itd --name mydb2 --privileged=true -p 5000:50000 -e LICENSE=accept -e DB2INST1_PASSWORD=pwd -e DBNAME=testdb -v vol:/database ibmcom/db2
-	#go test $(GOTEST_FLAGS) -race -gcflags=all=-d=checkptr=0 ./...
+	docker run -itd --name mydb2 --privileged=true -p 5000:50000 -e LICENSE=accept -e DB2INST1_PASSWORD=pwd -e DBNAME=testdb -v vol:/database ibmcom/db2
+	go test $(GOTEST_FLAGS) -race -gcflags=all=-d=checkptr=0 ./...
 
 lint:
 	$(GOLINT) run --timeout=5m -c .golangci.yml
