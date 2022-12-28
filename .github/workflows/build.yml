@@ -20,5 +20,6 @@ jobs:
           IBM_DB_HOME: /home/runner/work/clidriver
           CGO_CFLAGS: -I/home/runner/work/clidriver/include
           CGO_LDFLAGS: -L/home/runner/work/clidriver/lib
-          DYLD_LIBRARY_PATH: /home/runner/work/clidriver/lib
+          #DYLD_LIBRARY_PATH: /home/runner/work/clidriver/lib
+          LD_LIBRARY_PATH: /home/runner/work/clidriver/lib
         run: make test
