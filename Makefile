@@ -9,6 +9,7 @@ build:
 test:
 	go install github.com/ibmdb/go_ibm_db/installer@v0.4.2
 	go run /home/runner/go/pkg/mod/github.com/ibmdb/go_ibm_db@v0.4.2/installer/setup.go
+	find /home/ -name "clidriver"
 	ls /
 	ls /home/
 	ls /home/runner/
