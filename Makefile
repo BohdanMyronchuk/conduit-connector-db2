@@ -9,7 +9,7 @@ test:
 	go install github.com/ibmdb/go_ibm_db/installer@v0.4.2
 	go run /home/runner/go/pkg/mod/github.com/ibmdb/go_ibm_db@v0.4.2/installer/setup.go
 	docker run -itd --name mydb2 --privileged=true -p 50000:50000 -e LICENSE=accept -e DB2INST1_PASSWORD=pwd -e DBNAME=testdb -v /db2/vol:/database ibmcom/db2
-	sleep 30
+	sleep 35
 	go test $(GOTEST_FLAGS) ./...
 
 lint:
