@@ -23,4 +23,4 @@ jobs:
           CGO_LDFLAGS: -L/home/runner/work/clidriver/lib
           #DYLD_LIBRARY_PATH: /home/runner/work/clidriver/lib
           LD_LIBRARY_PATH: /home/runner/work/clidriver/lib
-        run: make test GOTEST_FLAGS="-v -count=1 -race"
+        run: make test #GOTEST_FLAGS="-v -count=1 -race"
