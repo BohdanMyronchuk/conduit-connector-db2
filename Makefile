@@ -12,7 +12,7 @@ test:
 	ls /home/runner/work/clidriver/lib
 	docker run -itd --name mydb2 --privileged=true -p 50000:50000 -e LICENSE=accept -e DB2INST1_PASSWORD=pwd -e DBNAME=testdb -v vol:/database ibmcom/db2
 	sleep 20
-	go test $(GOTEST_FLAGS) ./... #-race -gcflags=all=-d=checkptr=0
+	go test $(GOTEST_FLAGS) ./...
 
 lint:
 	$(GOLINT) run --timeout=5m -c .golangci.yml
